@@ -1,0 +1,14 @@
+# Visual Studio files and folder
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
+**.csproj
+
+# Binaries
+intermediate/
+binaries/
+
+# License Header
+Sirius.sln.licenseheader

@@ -10,4 +10,5 @@ _declspec(dllimport) void Print();
 
 void main() {
     Sirius::Print();
+    Sirius::Print();
 }

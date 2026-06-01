@@ -8,7 +8,7 @@
 namespace Sirius {
 
 void Print() {
-    std::cout << "I am Sirius Engine!!!";
+    std::cout << "I am Sirius Engine!!!\n";
 }
 
 } // namespace Sirius

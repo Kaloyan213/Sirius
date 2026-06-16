@@ -1,6 +1,7 @@
 BasedOnStyle: Microsoft
 IndentWidth: 4
 UseTab: Never
+PointerAlignment: Left
 
 BreakBeforeBraces: Attach
 NamespaceIndentation: None

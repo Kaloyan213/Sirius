@@ -1,7 +1,7 @@
-/*
+/* 
  * Copyright (c) Kaloyan Badankov
  */
-
+ 
 #include <SiriusCoreMinial.h>
 
 class Sandbox : public Sirius::Application {

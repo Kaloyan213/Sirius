@@ -1,7 +1,7 @@
-/*
+/* 
  * Copyright (c) Kaloyan Badankov
  */
-
+ 
 #pragma once
 
 #ifdef SIRIUS_PLATFORM_WINDOWS

@@ -4,7 +4,9 @@
  
 #pragma once
 
-#include "Sirius/Core.h"
+#include <sstream>   
+
+#include "Sirius/Core/Core.h"
 #include "LoggerDefinitions.h"
 
 inline namespace SiriusAPI {

@@ -2,7 +2,7 @@
  * Copyright (c) Kaloyan Badankov
  */
  
-#include "Sirius/Application.h"
+#include "Sirius/Application/Application.h"
 
 namespace Sirius {
 

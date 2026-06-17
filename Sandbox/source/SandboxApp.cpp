@@ -2,7 +2,7 @@
  * Copyright (c) Kaloyan Badankov
  */
  
-#include <SiriusCoreMinial.h>
+#include <Sirius/Core/SiriusCoreMinial.h>
 
 class Sandbox : public Sirius::Application {
   public:

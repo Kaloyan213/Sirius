@@ -4,7 +4,7 @@
  
 #pragma once
 
-#include "Core.h"
+#include "Sirius/Core/Core.h"
 
 namespace Sirius {
 

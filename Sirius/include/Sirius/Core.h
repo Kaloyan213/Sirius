@@ -11,5 +11,5 @@
 #define SIRIUS_API __declspec(dllimport)
 #endif
 #else
-#error Sirius only supports Windows!
+#error Sirius only supports Windows for now!
 #endif

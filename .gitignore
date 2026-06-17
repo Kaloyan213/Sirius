@@ -6,6 +6,7 @@
 **.vcxproj.user
 **.csproj
 GenerateProject.**
+build/
 
 # Binaries
 intermediate/

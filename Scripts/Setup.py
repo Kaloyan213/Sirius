@@ -14,16 +14,12 @@ PythonRequirements.Validate()
 premakeInstalled = PremakeRequirements.Validate()
 #VulkanRequirements.Validate()
 
-# 2. Define root paths
-# Get the directory where Setup.py resides
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.abspath(os.path.join(script_dir, ".."))
 
-# 3. Update submodules
 print("\nUpdating submodules...")
 subprocess.call(["git", "submodule", "update", "--init", "--recursive"], cwd=project_root)
 
-# 4. Run Premake
 if premakeInstalled:
     if platform.system() == "Windows":
         print("\nRunning premake (Windows)...")

@@ -12,6 +12,7 @@ function CommonSettings()
 
     filter "system:windows"
         defines { "SIRIUS_PLATFORM_WINDOWS" }
+        buildoptions "/utf-8"
     filter "system:linux"
         defines { "SIRIUS_PLATFORM_LINUX" }
         buildoptions { "-fvisibility=hidden" }
@@ -31,7 +32,7 @@ end
 function CopyDynamicLib()
     filter "system:windows"
         postbuildcommands {
-            "copy /Y \"%{cfg.buildtarget.relpath}\" \"..\\build\\\""
+           '{COPY} "%{cfg.buildtarget.abspath}" "%{wks.location}"'
         }
 
     filter "system:linux"

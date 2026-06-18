@@ -29,16 +29,11 @@ private:
 };
 
 /*_ Common, global logger instance, used where no specific logger is declared _*/
-Logger& gLogger() {
-    static Logger instance("Default");
-    return instance;
-};
+SIRIUS_API Logger& gLogger();
+
 
 /*_ Common, engine logger instance, used where no specific logger is declared _*/
-Logger& CoreLogger() {
-    static Logger instance("Sirius");
-    return instance;
-};
+SIRIUS_API Logger& CoreLogger();
 
 
 template <typename... Args>

@@ -7,10 +7,10 @@
 namespace Sirius {
 
 Application::Application() {
+
 }
 
-Application::~Application() {
-}
+Application::~Application() = default;
 
 void Application::Run() {
     while (true) {

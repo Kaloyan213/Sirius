@@ -25,4 +25,18 @@ void Logger::Init() {
     spdlog::set_pattern("[%H:%M:%S] [Thread: %t] [%n] [%L] %^%v%$");
     spdlog::set_level(LogLevel::info);
 }
+
+Logger& gLogger()
+{
+    static Logger instance("Default");
+    return instance;
+}
+
+Logger& CoreLogger()
+{
+    static Logger instance("Sirius");
+    return instance;
+}
+
 } // namespace SiriusAPI
+

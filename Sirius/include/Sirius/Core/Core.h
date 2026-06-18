@@ -17,5 +17,5 @@
         #define SIRIUS_API
     #endif
 #else
-#error Sirius only supports Windows for now!
+#error Sirius only supports Windows and Linux!
 #endif

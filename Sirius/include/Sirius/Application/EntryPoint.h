@@ -11,7 +11,7 @@ extern Sirius::Application* Sirius::CreateApplication();
 
 int main(int argc, char** argv) {
     Logger::Init();
-    CoreLogger().log(LogLevel::critical, "Start ", "your ", "engines!")
+    CoreLogger().Log(LogLevel::warn, "Start ", "your ", "engines!");
 
     auto app = Sirius::CreateApplication();
     app->Run();

@@ -1,5 +1,5 @@
 @echo off
 pushd %~dp0\..\
-call Vendor\premake\binaries\premake5.exe vs2022
+cmake -S . -B build -G "Visual Studio 17 2022"
 popd
 PAUSE

@@ -9,7 +9,7 @@
 
 extern Sirius::Application* Sirius::CreateApplication();
 
-int main(int argc, char** argv) {
+int main() {
     Logger::Init();
     CoreLogger().Log(LogLevel::warn, "Start ", "your ", "engines!");
 

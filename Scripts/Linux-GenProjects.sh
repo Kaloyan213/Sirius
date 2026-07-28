@@ -2,5 +2,5 @@
 
 # Move to the project root directory
 pushd "$(dirname "$0")/../" > /dev/null
-Vendor/premake/binaries/premake5 gmake2
+cmake -S . -B build -G "Ninja"
 popd > /dev/null

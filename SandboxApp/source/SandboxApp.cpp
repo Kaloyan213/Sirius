@@ -8,7 +8,7 @@
 class SandboxApp : public Application {
 protected:
     void OnInit() override {
-        SandboxLogger().Log(LogLevel::info, "Sandbox ready!");
+        SandboxLogger().Log(LogLevel::info, "Sandbox ready!");        
     }
 
     void OnTick() override {

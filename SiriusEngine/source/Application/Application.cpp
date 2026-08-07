@@ -4,6 +4,7 @@
  
 #include "Application/Application.h"
 #include "Utility/Logger.h"
+#include "Application/Config.h"
 
 namespace SiriusAPI {
 
@@ -23,6 +24,7 @@ int Application::Run() {
 
 int Application::Initialize()
 {
+    Sirius::Config::ReadAllConfigs (true);
     Logger::Init();
     CoreLogger().Log(LogLevel::info, "Engine Initialized!");
     

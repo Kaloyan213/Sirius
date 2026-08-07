@@ -18,3 +18,6 @@ generate_export_header(Sirius
     EXPORT_MACRO_NAME SIRIUS_API
     EXPORT_FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/sirius_export.h
 )
+
+add_subdirectory(Configs)
+

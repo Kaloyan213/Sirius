@@ -2,18 +2,25 @@
  * Copyright (c) Kaloyan Badankov
  */
  
-#include <Sirius/Core/SiriusCoreMinial.h>
+#include <Core/SiriusCoreMinial.h>
+#include "SandboxLogger.h"
 
-class Sandbox : public Sirius::Application {
-  public:
-    Sandbox(){
-
-    };
-
-    ~Sandbox() {
+class SandboxApp : public Application {
+protected:
+    void OnInit() override {
+        SandboxLogger().Log(LogLevel::info, "Sandbox ready!");
     }
+
+    void OnTick() override {
+        SandboxLogger().Log(LogLevel::debug, "Sandbox ready!");
+      }
 };
 
-Sirius::Application* Sirius::CreateApplication() {
-    return new Sandbox();
+int main([[maybe_unused]]int argc, [[maybe_unused]]char** argv) {
+    SandboxApp app;
+    app.Initialize();
+    
+    app.Run (); 
+
+    return 0;
 }

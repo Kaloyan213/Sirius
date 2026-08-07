@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Sirius/Core/Core.h"
+#include "Core/Core.h"
 
 #include <stddef.h>
 #include <stdint.h>

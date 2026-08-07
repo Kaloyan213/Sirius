@@ -46,5 +46,5 @@ else()
 endif()
 
 # Subdirectories containing the actual engine
-add_subdirectory(Sirius)
+add_subdirectory(SiriusEngine)
 add_subdirectory(SandboxApp)

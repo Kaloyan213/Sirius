@@ -6,7 +6,7 @@
 
 #include <sstream>   
 
-#include "Sirius/Core/Core.h"
+#include "Core/Core.h"
 #include "LoggerDefinitions.h"
 
 inline namespace SiriusAPI {
@@ -16,6 +16,8 @@ public:
     Logger(const std::string loggerName);
 
     static void Init ();
+
+    static void ChangeLogLevel (const LogLevel newLogLevel);
 
     template <typename... Args>
     inline void Log(LogLevel logLevel, Args&&... args);

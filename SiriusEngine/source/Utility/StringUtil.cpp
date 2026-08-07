@@ -1,5 +1,5 @@
-#include "Sirius/Utility/StringUtil.h"
-#include "Sirius/Utility/Logger.h"
+#include "Utility/StringUtil.h"
+#include "Utility/Logger.h"
 
 #include <algorithm>
 #include <cstring>
@@ -60,7 +60,7 @@ void StringUtil::ToLowercase (std::string& string)
 std::string StringUtil::ToLowercase (const std::string& string)
 {
 	std::string ret (string);
-	ToUppercase (ret);
+	ToLowercase (ret);
 	return ret;
 }
 

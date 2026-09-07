@@ -6,10 +6,11 @@
 #include "Utility/Logger.h"
 #include "Application/Config.h"
 
-namespace SiriusAPI {
+inline namespace SiriusAPI {
 
 Application::Application() {
-
+ 
+    
 }
 
 

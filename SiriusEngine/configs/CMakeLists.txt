@@ -2,4 +2,4 @@
 file(GLOB CONFIG_FILES "*.cfg")
 
 file(COPY ${CONFIG_FILES}
-     DESTINATION ${CMAKE_BINARY_DIR}/Configs)
+     DESTINATION ${CMAKE_BINARY_DIR}/configs)

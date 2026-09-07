@@ -1,3 +1,7 @@
+/* 
+ * Copyright (c) Kaloyan Badankov
+ */
+
 #pragma once
 
 #include "Core/Core.h"

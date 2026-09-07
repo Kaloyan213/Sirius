@@ -1,11 +1,10 @@
 /* 
  * Copyright (c) Kaloyan Badankov
  */
- 
+
 #pragma once
 
 #include "Core/Core.h"
-#include <string>
 
 inline namespace SiriusAPI {
 

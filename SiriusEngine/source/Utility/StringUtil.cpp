@@ -1,3 +1,7 @@
+/* 
+ * Copyright (c) Kaloyan Badankov
+ */
+
 #include "Utility/StringUtil.h"
 #include "Utility/Logger.h"
 

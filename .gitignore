@@ -5,9 +5,11 @@
 **.vcxproj.filters
 **.vcxproj.user
 **.csproj
-
+.vscode/
 # Binaries
 build/
 
-# License Header
-Sirius.sln.licenseheader
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class

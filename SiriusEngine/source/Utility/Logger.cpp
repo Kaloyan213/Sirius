@@ -38,7 +38,7 @@ namespace {
 
 }
 
-namespace SiriusAPI {
+inline namespace SiriusAPI {
 
 Logger::Logger(const std::string loggerName) : loggerName{loggerName} {
     coreLogger = spdlog::stdout_color_mt(loggerName);

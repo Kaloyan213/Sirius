@@ -1,3 +1,7 @@
+/* 
+ * Copyright (c) Kaloyan Badankov
+ */
+
 #include "Application/Config.h"
 #include "Utility/EnvParser.h"
 #include "Utility/Logger.h"
@@ -7,7 +11,7 @@
 
 namespace {
     Logger& ConfigLogger () {
-        static Logger instance ("ConfigLoger");
+        static Logger instance ("ConfigLogger");
         return  instance;
     }
 }
@@ -100,10 +104,10 @@ bool Config::ReadAllConfigs(bool isAlwaysExpected)
     };
 
     // Iterate through all files in the current directory
-    iterateDirectory(FS::current_path());
+    iterateDirectory(SIRIUS_BINARY_DIR);
 
     // Iterate through all files in the Config directory
-    FS::path configDir("Configs");
+    FS::path configDir = SIRIUS_BINARY_DIR + std::string("/configs");
     if (!FS::exists(configDir) || !FS::is_directory(configDir)) {
         ConfigLogger().Log(LogLevel::warn, "Configs directory not found at ", FS::absolute(configDir).string());
     } else {

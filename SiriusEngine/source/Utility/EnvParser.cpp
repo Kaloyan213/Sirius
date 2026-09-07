@@ -1,3 +1,7 @@
+/* 
+ * Copyright (c) Kaloyan Badankov
+ */
+
 #include "Utility/EnvParser.h"
 #include <cstdlib>
 

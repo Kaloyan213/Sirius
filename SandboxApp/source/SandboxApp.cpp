@@ -19,7 +19,6 @@ protected:
 int main([[maybe_unused]]int argc, [[maybe_unused]]char** argv) {
     SandboxApp app;
     app.Initialize();
-    
     app.Run (); 
 
     return 0;

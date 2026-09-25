@@ -4,6 +4,7 @@
 
 #include "Utility/EnvParser.h"
 #include <cstdlib>
+#include "Utility/StringUtil.h"
 
 namespace Sirius {
 

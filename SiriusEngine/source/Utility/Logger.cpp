@@ -8,34 +8,33 @@
 #include "spdlog/cfg/env.h"
 
 namespace {
-    LogLevel getLogLevel () {
-    std::string level = Sirius::Config::GetPropertyValue ("log_level", std::string ("info"));
+LogLevel getLogLevel () {
+    const std::string level = Sirius::Config::GetPropertyValue ("log_level", "");
+    
+    if(!level.empty()) {
+        return defaultLogLevel;
+    }
 
     if (level == "trace") {
         return LogLevel::trace;
-    } 
-    else if (level == "debug") {
+    } else if (level == "debug") {
         return LogLevel::debug;
-    } 
-    else if (level == "info") {
+    } else if (level == "info") {
         return LogLevel::info;
-    } 
-    else if (level == "warn" || level == "warning") {
+    } else if (level == "warn") {
         return LogLevel::warn;
-    } 
-    else if (level == "err" || level == "error") {
+    } else if (level == "err") {
         return LogLevel::err;
-    } 
-    else if (level == "critical") {
+    } else if (level == "critical") {
         return LogLevel::critical;
-    } 
-    else if (level == "off") {
+    } else if (level == "off") {
         return LogLevel::off;
     }
-
-    return LogLevel::debug; 
+    else {
+        CoreLogger().Log(LogLevel::err, "Invalid log level specified in config: ", level, ". Using default log level: ", defaultLogLevel);
+        return defaultLogLevel;
     }
-
+}
 }
 
 inline namespace SiriusAPI {

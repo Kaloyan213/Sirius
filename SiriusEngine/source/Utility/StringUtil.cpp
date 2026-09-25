@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <cstring>
 #include <limits>
+#include <map>
 
 
 inline namespace SiriusAPI {
@@ -22,7 +23,7 @@ std::string_view StringUtil::Ltrim (std::string_view string, std::string_view ch
 	size_t pos = string.find_first_not_of (charactersToTrim);
 
 	if (pos == std::string::npos) {
-		return std::string ();
+		return std::string_view ();
 	}
 
 	string.remove_prefix (pos);
@@ -34,7 +35,7 @@ std::string_view StringUtil::Rtrim (std::string_view string, std::string_view ch
 	size_t pos = string.find_last_not_of (charactersToTrim);
 
 	if (pos == std::string_view::npos) {
-		return std::string ();
+		return std::string_view ();
 	}
 
 	string.remove_suffix (string.size () - pos - 1);
@@ -46,7 +47,7 @@ std::string_view StringUtil::Trim (std::string_view string, std::string_view cha
 	size_t start = string.find_first_not_of (charactersToTrim);
 
 	if (start == std::string::npos) {
-		return std::string ();
+		return std::string_view ();
 	}
 
 	string.remove_prefix (start);
@@ -144,22 +145,23 @@ std::vector<std::string> StringUtil::Tokenize (const std::string& inputString, s
 {
 	std::vector<std::string> ret;
 
-	if (maxSplits) {
-		ret.reserve (maxSplits);
-	}
+    if (maxSplits > 0) {
+        ret.reserve(maxSplits + 1); // Reserve room for remaining trailing portion
+    }
 
-	TokenizePartial (inputString, delim, [&ret, maxSplits, &inputString] (std::string token) {
-		ret.emplace_back (token.data (), token.size ());
+    TokenizePartial(inputString, delim, [&ret, maxSplits, &inputString](const std::string& token) {
+        ret.push_back(token);
 
-		if (ret.size () == maxSplits) {
-			// ret.emplace_back (token.end(), &*inputString.end());
-			return StringUtil::tokenizeGetRemaining;
-		}
+        if (maxSplits > 0 && ret.size() == maxSplits) {
+            // Safe range construction for the remaining suffix of inputString
+            ret.emplace_back(token.end(), inputString.end());
+            return StringUtil::tokenizeGetRemaining;
+        }
 
-		return StringUtil::tokenizeContinue;
-	});
+        return StringUtil::tokenizeContinue;
+    });
 
-	return ret;
+    return ret;
 }
 
 void StringUtil::ReplaceAll (std::string& string, std::string lookup, std::string replace)
@@ -167,14 +169,13 @@ void StringUtil::ReplaceAll (std::string& string, std::string lookup, std::strin
 	size_t start = 0;
 	size_t pos = 0;
 
-	goto loop;
-
-	while (pos != std::string::npos) {
-		string.replace (pos, lookup.size (), replace);
-		start = pos + replace.size ();
-	loop:
+	do {
 		pos = string.find (lookup, start);
-	}
+		if (pos != std::string::npos) {
+			string.replace (pos, lookup.size (), replace);
+			start = pos + replace.size ();
+		}
+	} while (pos != std::string::npos);
 }
 
 template<>

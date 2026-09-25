@@ -15,6 +15,10 @@ class SIRIUS_API Logger {
 public:
     Logger(const std::string loggerName);
 
+    /**
+     * @brief Init the logger with the specified log level. Default log level is LogLevel::info.
+     * 
+     */
     static void Init ();
 
     static void ChangeLogLevel (const LogLevel newLogLevel);

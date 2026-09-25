@@ -10,25 +10,49 @@ inline namespace SiriusAPI {
 
 class SIRIUS_API Application {
   public:
+    /**
+     * @brief Construct a new Application object
+     * 
+     */
     Application();
-    //TODO Kalo - Add the options parser
-    // Application(int argc = 0, char** argv = nullptr);
+    
+    /**
+     * @brief Destroy the Application object
+     * 
+     */
     virtual ~Application() = default;
     
-    // Initializes the engine subsystems, should be called before application run
+    /**
+     * @brief Initializes the engine subsystems, should be called before application run
+     * 
+     * @return int 0 on success, non-zero on failure 
+     */
     int Initialize ();
 
-    // Contains the main engine loop
+    /**
+     * @brief Starts the main engine loop
+     * 
+     * @return int 0 on success, non-zero on failure 
+     */
     int Run ();
 
-    // Shutdowns the application gracefully
+    /**
+     * @brief Shutdowns the application gracefully
+     * 
+     */
     void Shutdown ();
 
 protected:
-    //Gets called once all the modules are initialized
+    /**
+     * @brief Gets called once all the modules are initialized
+     * 
+     */
     virtual void OnInit ();
 
-    //Gets called on every loop of the application
+    /**
+     * @brief Gets called on every loop of the application
+     * 
+     */
     virtual void OnTick ();
 
 private:

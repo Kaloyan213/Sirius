@@ -9,7 +9,6 @@
 #include <string_view>
 #include <unordered_map>
 #include <filesystem>
-#include <optional>
 
 /**
  * @brief Static Config class responsible for collecting data from all configs, or just some instances. The config should be either in the main build directory of the project subdirectory of the build folder called Configs 

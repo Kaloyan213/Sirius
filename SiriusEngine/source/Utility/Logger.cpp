@@ -31,7 +31,7 @@ LogLevel getLogLevel () {
         return LogLevel::off;
     }
     else {
-        CoreLogger().Log(LogLevel::err, "Invalid log level specified in config: ", level, ". Using default log level: ", defaultLogLevel);
+        CoreLogger().Log (LogLevel::err, "Invalid log level specified in config: ", level, ". Using default log level: ", defaultLogLevel);
         return defaultLogLevel;
     }
 }
